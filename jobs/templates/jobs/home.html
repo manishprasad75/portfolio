@@ -1,0 +1,45 @@
+{% extends "jobs/base.html" %}
+
+{%block content %}
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">Hi, I'm Manish</h1>
+            <p class="lead text-muted">Hey, my name is Manish Prasad and I am a great developer and a problem solver. I
+                have great coding skill.</p>
+            <p>
+                <a href="mailto:iamoneofmyownkind@gmail.com" class="btn btn-primary my-2">Email Me</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            {%for post in posts %}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top"
+                            src="{{post.image.url}}"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">{{post.summary}}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {%endfor%}
+        </div>
+    </div>
+</main>
+
+{%endblock content%}
