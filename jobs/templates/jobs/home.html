@@ -1,5 +1,5 @@
-{% extends "jobs/base.html" %}
-
+{% extends "base.html" %}
+{% load static %}
 {%block content %}
 <main role="main">
 
@@ -11,13 +11,18 @@
             <p>
                 <a href="mailto:iamoneofmyownkind@gmail.com" class="btn btn-primary my-2">Email Me</a>
             </p>
+            <img class="img-fluid" height="300" width="300" src="{%static 'myImage.jpeg'%}" alt="">
         </div>
     </section>
 
     <div class="album py-5 bg-light">
         <div class="container">
-            {%for post in posts %}
+            <h1 class="text-center">Jobs</h1>
+            <br/>
+            <hr/>
             <div class="row">
+                {%for post in posts%}
+
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top"
@@ -26,18 +31,20 @@
                         <div class="card-body">
                             <p class="card-text">{{post.summary}}</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <!-- <div class="btn-group"> -->
+                                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                 </div>
-                                <small class="text-muted">9 mins</small>
+                                <small class="text-muted">9 mins</small> -->
                             </div>
                         </div>
                     </div>
                 </div>
 
+                {%endfor%}
+
+
             </div>
-            {%endfor%}
         </div>
     </div>
 </main>

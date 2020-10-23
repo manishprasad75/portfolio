@@ -25,7 +25,7 @@ SECRET_KEY = 'kgde!b7^chf_492xpbu69kfif4&06^u8l6#)mo(-&+f-k)e%rl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', '192.168.0.109']
 
 
 # Application definition
@@ -56,7 +56,9 @@ ROOT_URLCONF = 'portfolio.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,6 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 

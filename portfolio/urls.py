@@ -24,7 +24,8 @@ import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', jobs.views.home, name='home')
+    path('', jobs.views.home, name='home'),
+    path('blog/', include('blog.urls'), name='blog'), #inside include we have to give the "apps" name
 ]
 
 if settings.DEBUG:
